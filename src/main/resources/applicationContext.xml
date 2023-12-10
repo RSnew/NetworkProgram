@@ -32,5 +32,8 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="basePackage" value="com.project.model.dao"/>
     </bean>
+    <!--文件解析-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 
+    </bean>
 </beans>
