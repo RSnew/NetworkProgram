@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>Project.jsp</title>
-    <script src="../../js/project.js"></script>
+<%--    <script src="../../js/project.js"></script>--%>
 </head>
 <body>
     <h2>提交项目页面</h2>
-    <form action="#"><!--需要ajax 提示上传文件成功-->
-        <input type="file" name="uploadProgram" id="uploadFile" value="上传文件"><br>
+    <form method="post" action="${pageContext.request.contextPath}/project/uploadProject" enctype="multipart/form-data"><!--需要ajax 提示上传文件成功-->
+        <input type="file" name="uploadFile" value="上传文件"><br>
         <input type="submit" name="submit" value="提交文件">
     </form>
 </body>
