@@ -20,5 +20,8 @@
         <p>项目文件：<input type="file" name="uploadFile" value="上传文件"><br></p>
         <input type="submit" name="submit" value="提交文件">
     </form>
+    <form method="get" action="">
+        <input type="submit" value="返回上级">
+    </form>
 </body>
 </html>

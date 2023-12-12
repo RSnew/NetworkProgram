@@ -11,7 +11,9 @@
     <title>SuccessProject</title>
 </head>
 <body>
-    <h2>提交成功！</h2>
-    <a href='${pageContext.request.contextPath}/project/index'>返回主界面</a>
+<script type="text/javascript">
+    alert("提交成功！");
+    window.document.location.href="${pageContext.request.contextPath}/project/judgeIndex";
+</script>
 </body>
 </html>

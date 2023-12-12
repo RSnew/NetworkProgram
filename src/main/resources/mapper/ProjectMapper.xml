@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.model.dao.ProjectDao">
+
     <!--提交项目，没有score-->
     <insert id="addProject" parameterType="com.project.model.pojo.Project"
     useGeneratedKeys="true" keyProperty="programID">
@@ -9,14 +10,47 @@
             (programName, programPath, programAuthorID, programTeacherID)
         value (#{programName}, #{programPath}, #{programAuthorID}, #{programTeacherID})
     </insert>
-    <select id="findTeacherIdByName" parameterType="string" resultType="int">
+    <!--通过姓名查找id-->
+    <select id="findTeacherIdByName" parameterType="string" resultType="string">
         select teacherID
         from ssmbighomework.teachertable
         where teacherName=#{teacherName}
     </select>
-    <select id="findStudentIdByName" parameterType="string" resultType="int">
+    <select id="findStudentIdByName" parameterType="string" resultType="string">
         select studentID
         from ssmbighomework.studenttable
         where studentName=#{studentName}
+    </select>
+    <!--通过id查找姓名‘''-->
+    <select id="findTeacherNameById" parameterType="string" resultType="string">
+        select teacherName
+        from ssmbighomework.teachertable
+        where teacherID=${teacherID}
+    </select>
+    <select id="findStudentNameById" parameterType="string" resultType="string">
+        select studentName
+        from ssmbighomework.studenttable
+        where studentID=${studentID}
+    </select>
+
+    <update id="addProgramPath" parameterType="com.project.model.pojo.Project">
+        update ssmbighomework.programtable
+        set programPath=#{programPath}
+        where programID=#{programID}
+    </update>
+
+
+    <select id="findProgram" resultType="com.project.model.pojo.Project">
+        select * from ssmbighomework.programtable
+    </select>
+    <update id="addScore" parameterType="com.project.model.pojo.Project">
+        update ssmbighomework.programtable
+        set programScore=#{programScore}
+        where programID=${programID}
+    </update>
+    <select id="findProjectById" resultType="com.project.model.pojo.Project" parameterType="int">
+        select *
+        from ssmbighomework.programtable
+        where programID=#{programID}
     </select>
 </mapper>

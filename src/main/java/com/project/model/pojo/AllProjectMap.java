@@ -1,20 +1,42 @@
 package com.project.model.pojo;
 
-public class Project {
+public class AllProjectMap {
     private int programID;
     private String programName;
     private String programPath;
     private String programAuthorID;
+    private String programAuthorName;
     private int programScore;
     private String programTeacherID;
+    private String programTeacherName;
 
-    public Project() {
+    public AllProjectMap(int programID,String programName, String programAuthorName, String programTeacherName,int programScore,String programPath) {
+        this.programID=programID;
+        this.programName = programName;
+        this.programAuthorName = programAuthorName;
+        this.programTeacherName = programTeacherName;
+        this.programScore=programScore;
+        this.programPath=programPath;
     }
 
-    public Project(String programName, String  programAuthorID, String  programTeacherID) {
-        this.programName = programName;
-        this.programAuthorID = programAuthorID;
-        this.programTeacherID = programTeacherID;
+
+    public AllProjectMap() {
+    }
+
+    public String getProgramAuthorName() {
+        return programAuthorName;
+    }
+
+    public void setProgramAuthorName(String programAuthorName) {
+        this.programAuthorName = programAuthorName;
+    }
+
+    public String getProgramTeacherName() {
+        return programTeacherName;
+    }
+
+    public void setProgramTeacherName(String programTeacherName) {
+        this.programTeacherName = programTeacherName;
     }
 
     public int getProgramID() {
