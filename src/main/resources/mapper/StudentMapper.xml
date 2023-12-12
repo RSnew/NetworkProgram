@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.model.dao.StudentDao">
+    <select id="findByStudentId"  parameterType="Integer" resultType="com.project.model.pojo.Student">
+        select *
+        from ssmbighomework.studenttable
+        where studentID=#{studentID}
+    </select>
+    <update id="modifyStudent" parameterType="com.project.model.pojo.Student">
+        update ssmbighomework.studenttable
+        set studentName=#{studentName},password=#{password}
+        where studentID=#{studentID}
+    </update>
+    <delete id="deleteStudent" parameterType="Integer">
+        delete
+        from ssmbighomework.studenttable
+        where studentID=#{studentID}
+    </delete>
+</mapper>

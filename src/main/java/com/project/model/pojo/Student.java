@@ -2,19 +2,23 @@ package com.project.model.pojo;
 
 public class Student {
     private int studentID;
+    private String studentName;
+    private String password;
 
-    private String studentName;//用户名
-    private String password;//密码
+    public int getStudentID() {
+        return studentID;
+    }
 
+    public void setStudentID(int studentID) {
+        this.studentID = studentID;
+    }
 
-
-
-    public String getUserName() {
+    public String getStudentName() {
         return studentName;
     }
 
-    public void setUserName(String userName) {
-        this.studentName = userName;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public String getPassword() {
@@ -23,14 +27,5 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-
-    public int getStudentID() {
-        return studentID;
-    }
-
-    public void setStudentID(int studentID) {
-        this.studentID = studentID;
     }
 }

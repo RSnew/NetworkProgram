@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.model.dao.InfoDao">
+    <select id="findAll" 	resultType="com.project.model.pojo.Info"  >
+        select * from ssmbighomework.infotable
+    </select>
+    <update id="addInfo" >
+        insert into ssmbighomework.infotable(infoTeacherID,infoBody) values
+            (#{infoTeacherID}, #{infoBody});
+    </update>
+    <update id="deleteById">
+        delete from ssmbighomework.infotable where infoID=#{id}
+    </update>
+    <select id="findById" resultType="com.project.model.pojo.Info">
+        select * from ssmbighomework.infotable where infoID=#{id}
+    </select>
+    <update id="updateById">
+        update ssmbighomework.infotable set infoBody=#{infoBody}
+        where infoID=#{infoID}
+    </update>
+</mapper>
