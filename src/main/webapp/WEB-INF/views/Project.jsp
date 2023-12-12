@@ -14,7 +14,10 @@
 <body>
     <h2>提交项目页面</h2>
     <form method="post" action="${pageContext.request.contextPath}/project/uploadProject" enctype="multipart/form-data"><!--需要ajax 提示上传文件成功-->
-        <input type="file" name="uploadFile" value="上传文件"><br>
+        <p>项目名称：<input type="text" name="projectName"><br></p>
+        <p>负责人姓名：<input type="text" name="projectAuthorName"><br></p>
+        <p>指导教师：<input type="text" name="projectTeacherName"><br></p>
+        <p>项目文件：<input type="file" name="uploadFile" value="上传文件"><br></p>
         <input type="submit" name="submit" value="提交文件">
     </form>
 </body>

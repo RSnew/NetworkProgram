@@ -33,9 +33,7 @@ public class ProjectController {
             f.transferTo(new File(realPath+"/"+f.getOriginalFilename()));
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out = response.getWriter();
-            out.print("<script type='text/javascript'>alert('成功!');</script>");
-            mav.setViewName("SuccessProject");
-            out.close();
+            mav.setViewName("SuccessProject");  //转发到成功请求
         }
 
         return mav;

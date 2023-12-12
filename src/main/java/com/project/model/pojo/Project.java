@@ -1,49 +1,58 @@
 package com.project.model.pojo;
 
 public class Project {
-    private int projectID;          //项目id
-    private String projectName;     //项目名称
-    private String author;          //项目作者
-    private String projectDetail;   //项目详细信息
-    private int score;              //项目得分
+    private int programID;
+    private String programName;
+    private String programPath;
+    private int programAuthorID;
+    private int programScore;
+    private int programTeacherID;
 
-    public String getProjectDetail() {
-        return projectDetail;
+    public int getProgramID() {
+        return programID;
     }
 
-    public void setProjectDetail(String projectDetail) {
-        this.projectDetail = projectDetail;
+    public void setProgramID(int programID) {
+        this.programID = programID;
     }
 
-    public int getProjectID() {
-        return projectID;
+    public String getProgramName() {
+        return programName;
     }
 
-    public void setProjectID(int projectID) {
-        this.projectID = projectID;
+    public void setProgramName(String programName) {
+        this.programName = programName;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getProgramPath() {
+        return programPath;
     }
 
-    public void setProjectName(String projectNAME) {
-        this.projectName = projectNAME;
+    public void setProgramPath(String programPath) {
+        this.programPath = programPath;
     }
 
-    public String getAuthor() {
-        return author;
+    public int getProgramAuthorID() {
+        return programAuthorID;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setProgramAuthorID(int programAuthorID) {
+        this.programAuthorID = programAuthorID;
     }
 
-    public int getScore() {
-        return score;
+    public int getProgramScore() {
+        return programScore;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setProgramScore(int programScore) {
+        this.programScore = programScore;
+    }
+
+    public int getProgramTeacherID() {
+        return programTeacherID;
+    }
+
+    public void setProgramTeacherID(int programTeacherID) {
+        this.programTeacherID = programTeacherID;
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.model.dao.ProjectDao">
+    <!--提交项目，没有score-->
+    <insert id="addProject" parameterType="com.project.model.pojo.Project"
+    useGeneratedKeys="true" keyProperty="programID">
+        insert into ssmbighomework.programtable
+            (programName, programPath, programAuthorID, programTeacherID)
+        value (#{programName}, #{programPath}, #{programAuthorID}, #{programTeacherID})
+    </insert>
+    <select id="findTeacherIdByName" parameterType="string" resultType="int">
+        select teacherID
+        from ssmbighomework.teachertable
+        where teacherName=#{teacherName}
+    </select>
+    <select id="findStudentIdByName" parameterType="string" resultType="int">
+        select studentID
+        from ssmbighomework.studenttable
+        where studentName=#{studentName}
+    </select>
+</mapper>
