@@ -12,7 +12,6 @@
 <head>
     <title>StudentIndex.jsp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <link rel="stylesheet" href="../../js/ssm.css">
 </head>
 <body>
 <center>
@@ -30,18 +29,19 @@
         </table>
     </div>
     <form>
-        <div class="containt1">
-        <a href="Project?studentid=${1}">提交项目</a>
-        <a href="QuestionAndAnswer?studentid=${1}">提出疑问</a>
-        <a href="download">项目模板</a>
+        <div>
+        <a href="${pageContext.request.contextPath}/students/Project">提交项目</a>
+        <a href="${pageContext.request.contextPath}/students/answer?studentid=${studentid}">提出疑问</a>
+        <a href="${pageContext.request.contextPath}/students/download">项目模板</a>
         </div>
     </form>
-    <div class="containt2">
+    <div>
     <form action="${pageContext.request.contextPath}/students/findByStudentId" method="post">
         查看个人信息:<input type="search" name="studentid" class="search">
         <input type="submit" value="提交" >
     </form>
     </div>
+    <a href="/user/login">注销</a>
 </center>
 </body>
 </html>

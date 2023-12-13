@@ -25,15 +25,16 @@ public class TeacherController {
     private InfoService infoService;
 
     @GetMapping("login")
-    public String login(Model model){
+    public String login(Model model,@RequestParam(value="teacherid")Integer id){
         List<Info> infoList = infoService.findAll();
         model.addAttribute("infoList",infoList);
+        model.addAttribute("teacherid",id);
         return "TeacherIndex";
     }
     @RequestMapping("JudgeProject")
     public ModelAndView judgeProject(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("JudgeProject");
+        modelAndView.setViewName("project/JudgeProject");
         return modelAndView;
     }
     @RequestMapping("TeacherUpdate")
@@ -50,18 +51,21 @@ public class TeacherController {
         teacher.setPassword(password);
         teacherService.modifyTeacher(teacher);
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("teacherid",id);
         modelAndView.setViewName("TeacherIndex");
         return modelAndView;
     }
     @RequestMapping("Query")
-    public ModelAndView query(){
+    public ModelAndView query(@RequestParam(value="teacherid")Integer id){
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("teacherid",id);
         modelAndView.setViewName("answer");
         return modelAndView;
     }
     @RequestMapping("Info")
-    public ModelAndView Info(){
+    public ModelAndView Info(@RequestParam(value="teacherid")Integer id){
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("teacherid",id);
         modelAndView.setViewName("info");
         return modelAndView;
     }

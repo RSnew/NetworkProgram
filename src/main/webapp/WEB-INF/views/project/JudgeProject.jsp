@@ -38,6 +38,8 @@
     </c:forEach>
        <input type="button" value="下载界面" onclick="
                 window.location.href='${pageContext.request.contextPath}/project/downloadIndex';">
+        <input type="button" value="返回上级" onclick="
+                window.location.href='${pageContext.request.contextPath}/teachers/login';">
 <%--<script>--%>
 <%--    function myButton(){--%>
 <%--        var myInput=document.getElementById("programFile").value;--%>

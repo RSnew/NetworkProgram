@@ -9,7 +9,6 @@
     <title>登录页面</title>
 </head>
 <body>
-<p>${message}</p>
 <div align="center">
     <h2>登录</h2>
 
@@ -22,7 +21,7 @@
     <c:if test="${sessionScope.user ne null}">
         <p>注册成功，欢迎, ${sessionScope.user.username}!</p>
     </c:if>
-
+    <p>${message}</p>
     <!-- 登录表单 -->
     <form action="${pageContext.request.contextPath}/user/login" method="post">
         <label for="username">用户名:</label>

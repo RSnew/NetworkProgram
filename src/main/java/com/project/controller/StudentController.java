@@ -25,16 +25,16 @@ public class StudentController{
     private InfoService infoService;
 
     @GetMapping("login")
-    public String login(Model model){//从杨慧宇那获得值
+    public String login(Model model,@RequestParam("studentid") Integer id){//从杨慧宇那获得值
         List<Info> infoList = infoService.findAll();
         model.addAttribute("infoList",infoList);
+        model.addAttribute("studentid",id);
         return "StudentIndex";
     }
     @RequestMapping("Project")
-    public ModelAndView project(@RequestParam("studentid") Integer id){
+    public ModelAndView project(){//@RequestParam("studentid") Integer id
         ModelAndView modelAndView = new ModelAndView();
-        //System.out.println(studentid);
-        modelAndView.setViewName("Project");
+        modelAndView.setViewName("project/UploadProject");
         return modelAndView;
     }
     @RequestMapping("StudentUpdate")
@@ -51,16 +51,16 @@ public class StudentController{
         student.setPassword(password);
         studentService.modifyStudent(student);
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("studentid",id);
         modelAndView.setViewName("StudentIndex");
         return modelAndView;
     }
-    @RequestMapping("QuestionAndAnswer")
-    public ModelAndView questionAndAnswer(@RequestParam("studentid") Integer id){
+    @RequestMapping("answer")
+    public ModelAndView answer(@RequestParam("studentid") Integer id){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("QuestionAndAnswer");
+        modelAndView.setViewName("answer");
         return modelAndView;
     }
-
     @RequestMapping("findByStudentId")
     public ModelAndView findByStudentId(@RequestParam("studentid") Integer id){
         Student studentList = studentService.findByStudentId(id);

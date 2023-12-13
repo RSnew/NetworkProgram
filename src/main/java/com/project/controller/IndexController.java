@@ -18,7 +18,7 @@ public class IndexController {
     @GetMapping("login")
     public String login(HttpSession session) {
         if (session.getAttribute("user") != null) {
-            return "student/index";
+            return "StudentIndex";
         } else {
             return "login";
         }

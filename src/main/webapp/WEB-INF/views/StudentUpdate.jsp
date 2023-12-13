@@ -26,8 +26,8 @@
             <td><input type="password" name="password"></td>
         </tr>
         <input type="submit" value="修改"/>
-        <a href="findByStudentId?studentid=${studentid}">查看个人信息</a>
-        <a href="login?studentid=${studentid}">回到主界面</a>
+        <a href="${pageContext.request.contextPath}/students/findByStudentId?studentid=${studentid}">查看个人信息</a>
+        <a href="${pageContext.request.contextPath}/students/login?studentid=${studentid}">回到主界面</a>
     </form>
 </body>
 </html>
